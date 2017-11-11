@@ -7,8 +7,8 @@ $message = "";
 
 if (isset($_POST['submit'])) {
   //form was submitted
-  $username = $_POST['username'];
-  $password = $_POST['password'];
+  $username = trim($_POST['username']);
+  $password = trim($_POST['password']);
 
   //validate
   $fields_required = ['username', 'password'];
@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
       redirect_to('new.php');
     }
     else {
-      $message = "There were some errors";
+      $message = "Username and Password do not match";
     }
   }
 }
